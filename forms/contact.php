@@ -1,48 +1,21 @@
 <?php
-
-  // $receiving_email_address = 'abdulrazaq2a@gmail.com';
-
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/validate.js' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
-
-  // $contact = new PHP_Email_Form;
-  // $contact->ajax = true;
+if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])){
   
-  // $contact->to = $receiving_email_address;
-  // $contact->from_name = $_POST['name'];
-  // $contact->from_email = $_POST['email'];
-  // $contact->subject = $_POST['subject'];
-  // $contact->message = $_POST['message']
-
-  // // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  // /*
-  // $contact->smtp = array(
-  //   'host' => 'example.com',
-  //   'username' => 'example',
-  //   'password' => 'pass',
-  //   'port' => '587'
-  // );
-  // */
-
-  // $contact->add_message( $_POST['name'], 'From');
-  // $contact->add_message( $_POST['email'], 'Email');
-  // $contact->add_message( $_POST['message'], 'Message', 10);
-
-  // echo $contact->send();
-  ini_set('display_errors', 1);
-  error_reporting( E_ALL );
-
+  echo $name = $_POST['name'];
+  echo $email = $_POST['email'];
+  echo $subject = $_POST['subject'];
+  echo  $message = $_POST['message'];
+  
   $to = 'abdulrazaq2a@gmail.com';
-  $from = $_POST['name']; 
-  $email = $_POST['email'];
+  $email = 'From: '.$_POST['email'];
   $subject = $_POST['subject'];
-  $message = $_POST['message'];
+  $message = $_POST['name']."\n".$_POST['message'];
 
-  if(mail($to, $email, $subject, $message)){
-    echo 'Sent!';
+  if(@mail($to, $email, $subject, $message)){
+    echo 'Thak you for contacting us. We\'ll get back to you';
+  } else {
+    echo 'Sorry, an error occured, this maybe due to bad network. Please try again later.';
   }
+} 
   
 ?>
