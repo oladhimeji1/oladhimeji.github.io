@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])){
+// if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])){
   
   $name = $_POST['name'];
   $email = $_POST['email'];
@@ -16,6 +16,6 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) 
   } else {
     echo 'Sorry, an error occured, this maybe due to bad network. Please try again later.';
   }
-} 
+// } 
   
 ?>
