@@ -1,10 +1,10 @@
 <?php
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])){
   
-  echo $name = $_POST['name'];
-  echo $email = $_POST['email'];
-  echo $subject = $_POST['subject'];
-  echo  $message = $_POST['message'];
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $subject = $_POST['subject'];
+  $message = $_POST['message'];
   
   $to = 'abdulrazaq2a@gmail.com';
   $email = 'From: '.$_POST['email'];
